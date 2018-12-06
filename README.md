@@ -1,2 +1,2 @@
-# CSharp-MVC-Framework-ASP.NET-CORE
+# CSharp-MVC-Frameworks-ASP.NET-CORE
 Course Work
