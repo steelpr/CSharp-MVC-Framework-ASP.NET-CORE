@@ -1,7 +1,8 @@
 @using Microsoft.AspNetCore.Identity
+@using  ExchangeRate.Data.Models
 
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<ExchangeRateUser> SignInManager
+@inject UserManager<ExchangeRateUser> UserManager
 
 @if (SignInManager.IsSignedIn(User))
 {

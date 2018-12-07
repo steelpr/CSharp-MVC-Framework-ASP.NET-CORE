@@ -5,6 +5,14 @@ body {
     padding-bottom: 20px;
 }
 
+/*.bg {
+    background-image: url(../image/image.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}*/
+
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {

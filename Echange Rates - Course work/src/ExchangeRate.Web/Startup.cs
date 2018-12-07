@@ -1,20 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ExchangeRate.Web.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using ExchangeRate.Web.Models;
-using ExchangeRate.Web.Areas.Identity.Data;
 using ExchangeRate.Data;
+using ExchangeRate.Data.Models;
 
 namespace ExchangeRate.Web
 {
@@ -39,7 +31,7 @@ namespace ExchangeRate.Web
 
             services.AddDbContext<ExchangeRateContext>(options =>
                       options.UseSqlServer(
-                          this.Configuration.GetConnectionString("ExchangeRateContextConnection")));
+                          this.Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDefaultIdentity<ExchangeRateUser>()
                 .AddEntityFrameworkStores<ExchangeRateContext>();

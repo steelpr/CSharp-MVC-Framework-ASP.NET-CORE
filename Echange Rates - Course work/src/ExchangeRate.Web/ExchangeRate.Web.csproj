@@ -12,10 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Identity\Services\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ExchangeRate.Data.Models\ExchangeRate.Data.Models.csproj" />
     <ProjectReference Include="..\ExchangeRate.Data\ExchangeRate.Data.csproj" />
   </ItemGroup>
