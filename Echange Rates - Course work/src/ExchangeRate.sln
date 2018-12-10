@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRate.Web", "ExchangeRate.Web\ExchangeRate.Web.csproj", "{2E70647F-347D-436F-A362-4BC685D4C8CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRate.Web", "ExchangeRate.Web\ExchangeRate.Web.csproj", "{2E70647F-347D-436F-A362-4BC685D4C8CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRate.Data", "ExchangeRate.Data\ExchangeRate.Data.csproj", "{AC3B6AA9-182E-47B1-8580-DCDEF467526D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRate.Data", "ExchangeRate.Data\ExchangeRate.Data.csproj", "{AC3B6AA9-182E-47B1-8580-DCDEF467526D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRate.Data.Models", "ExchangeRate.Data.Models\ExchangeRate.Data.Models.csproj", "{63DB9A43-2CD7-4A12-83B0-DAEA3BB5B2B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRate.Data.Models", "ExchangeRate.Data.Models\ExchangeRate.Data.Models.csproj", "{63DB9A43-2CD7-4A12-83B0-DAEA3BB5B2B0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRate.Services", "ExchangeRate.Services\ExchangeRate.Services.csproj", "{3E3BC3AB-C072-4BD0-8BD5-E18365BEBC2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Test\Sandbox\Sandbox.csproj", "{0951B7C4-77B1-45CB-8675-C9961DCC4DE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{63DB9A43-2CD7-4A12-83B0-DAEA3BB5B2B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63DB9A43-2CD7-4A12-83B0-DAEA3BB5B2B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63DB9A43-2CD7-4A12-83B0-DAEA3BB5B2B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E3BC3AB-C072-4BD0-8BD5-E18365BEBC2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E3BC3AB-C072-4BD0-8BD5-E18365BEBC2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E3BC3AB-C072-4BD0-8BD5-E18365BEBC2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E3BC3AB-C072-4BD0-8BD5-E18365BEBC2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0951B7C4-77B1-45CB-8675-C9961DCC4DE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0951B7C4-77B1-45CB-8675-C9961DCC4DE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0951B7C4-77B1-45CB-8675-C9961DCC4DE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0951B7C4-77B1-45CB-8675-C9961DCC4DE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

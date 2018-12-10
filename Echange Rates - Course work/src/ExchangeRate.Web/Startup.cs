@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ExchangeRate.Data;
 using ExchangeRate.Data.Models;
+using Sandbox;
 
 namespace ExchangeRate.Web
 {
@@ -33,10 +34,18 @@ namespace ExchangeRate.Web
                       options.UseSqlServer(
                           this.Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDefaultIdentity<ExchangeRateUser>()
+            services.AddDefaultIdentity<ExchangeRateUser>(option => {
+                option.Password.RequireDigit = false;
+                option.Password.RequiredLength = 0;
+                option.Password.RequiredUniqueChars = 0;
+                option.Password.RequireLowercase = false;
+                option.Password.RequireNonAlphanumeric = false;
+            })
                 .AddEntityFrameworkStores<ExchangeRateContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddHostedService<TimedHostedService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

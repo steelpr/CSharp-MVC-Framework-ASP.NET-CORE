@@ -14,6 +14,8 @@
   <ItemGroup>
     <ProjectReference Include="..\ExchangeRate.Data.Models\ExchangeRate.Data.Models.csproj" />
     <ProjectReference Include="..\ExchangeRate.Data\ExchangeRate.Data.csproj" />
+    <ProjectReference Include="..\ExchangeRate.Services\ExchangeRate.Services.csproj" />
+    <ProjectReference Include="..\Test\Sandbox\Sandbox.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,9 +2,13 @@
 for details on configuring this project to bundle and minify static web assets. */
 body {
     padding-top: 50px;
+    background-color:#4e4545;
     padding-bottom: 20px;
-}
+    }
 
+.text-color{
+    color:#ddd2d2;
+}
 /*.bg {
     background-image: url(../image/image.jpg);
     height: 100%;
