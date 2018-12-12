@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ExchangeRate.Data.Common\ExchangeRate.Data.Common.csproj" />
     <ProjectReference Include="..\ExchangeRate.Data.Models\ExchangeRate.Data.Models.csproj" />
   </ItemGroup>
 

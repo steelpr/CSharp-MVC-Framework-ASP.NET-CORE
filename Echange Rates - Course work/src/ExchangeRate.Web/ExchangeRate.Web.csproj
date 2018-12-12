@@ -12,8 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ExchangeRate.Data.Common\ExchangeRate.Data.Common.csproj" />
     <ProjectReference Include="..\ExchangeRate.Data.Models\ExchangeRate.Data.Models.csproj" />
+    <ProjectReference Include="..\ExchangeRate.DataProcessor\ExchangeRate.DataProcessor.csproj" />
     <ProjectReference Include="..\ExchangeRate.Data\ExchangeRate.Data.csproj" />
+    <ProjectReference Include="..\ExchangeRate.Services.Mapping\ExchangeRate.Services.Mapping.csproj" />
     <ProjectReference Include="..\ExchangeRate.Services\ExchangeRate.Services.csproj" />
     <ProjectReference Include="..\Test\Sandbox\Sandbox.csproj" />
   </ItemGroup>

@@ -7,7 +7,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ExchangeRate.Data;
 using ExchangeRate.Data.Models;
-using Sandbox;
+using ExchangeRate.Data.Common;
+using ExchangeRate.DataProcessor;
+using ExchangeRate.Services.Contracts;
+using ExchangeRate.Services;
+using ExchangeRate.Services.Mapping;
 
 namespace ExchangeRate.Web
 {
@@ -23,6 +27,10 @@ namespace ExchangeRate.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            AutoMapperConfig.RegisterMappings(
+                typeof(Deserializer).Assembly
+                );
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -34,7 +42,8 @@ namespace ExchangeRate.Web
                       options.UseSqlServer(
                           this.Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDefaultIdentity<ExchangeRateUser>(option => {
+            services.AddDefaultIdentity<ExchangeRateUser>(option =>
+            {
                 option.Password.RequireDigit = false;
                 option.Password.RequiredLength = 0;
                 option.Password.RequiredUniqueChars = 0;
@@ -42,8 +51,13 @@ namespace ExchangeRate.Web
                 option.Password.RequireNonAlphanumeric = false;
             })
                 .AddEntityFrameworkStores<ExchangeRateContext>();
+            
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddScoped(typeof(IRepository<>), typeof(DbRepository<>));
+            services.AddScoped<IDataProcessorService, DataProcessorService>();
+            services.AddSingleton<Deserializer>();
 
             services.AddHostedService<TimedHostedService>();
         }

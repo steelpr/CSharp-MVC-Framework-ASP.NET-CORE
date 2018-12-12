@@ -4,17 +4,22 @@ using System.Threading;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using System.Net;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace Sandbox
+namespace ExchangeRate.DataProcessor
 {
     public class TimedHostedService : IHostedService, IDisposable
     {
         private readonly ILogger logger;
+        private readonly Deserializer deserializer;
         private Timer timer;
+        private const int startIndex = 30;
+        private const int endIndex = 502;
 
-        public TimedHostedService(ILogger<TimedHostedService> logger)
+        public TimedHostedService(ILogger<TimedHostedService> logger, Deserializer deserializer)
         {
             this.logger = logger;
+            this.deserializer = deserializer;
         }
 
         public Task StartAsync(CancellationToken cancellationToken)
@@ -33,7 +38,20 @@ namespace Sandbox
 
             WebClient wc = new WebClient();
 
-            string xml = wc.DownloadString("http://www.bnb.bg/Statistics/StExternalSector/StExchangeRates/StERForeignCurrencies/index.htm?download=xml&search=&lang=BG");
+            string xml = wc.DownloadString("http://www.bnb.bg/Statistics/StExternalSector/StExchangeRates/StERForeignCurrencies/index.htm?download=xml&search=&lang=EN");
+            
+            string xmlString = xml.Remove(startIndex, endIndex);
+                    
+            try
+            {
+                deserializer.ImportCurreny(xmlString);
+
+                logger.LogInformation("The deserialization was Ok");
+            }
+            catch (Exception)
+            {
+                logger.LogError("deserialization stopped");
+            }
         }
 
         public Task StopAsync(CancellationToken cancellationToken)

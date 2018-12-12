@@ -5,7 +5,7 @@ using ExchangeRate.Services.Contracts;
 namespace ExchangeRate.Services
 {
     public class ArticlesService : IArticlesService
-    {
+    { 
         public void CreateArticle()
         {
             throw new System.NotImplementedException();

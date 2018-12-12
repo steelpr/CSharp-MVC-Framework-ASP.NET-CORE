@@ -14,6 +14,6 @@ namespace ExchangeRate.Data.Models
             this.Articles = new HashSet<Article>();
         }
 
-        public ICollection<Article> Articles { get; set; }
+        public virtual ICollection<Article> Articles { get; set; }
     }
 }
