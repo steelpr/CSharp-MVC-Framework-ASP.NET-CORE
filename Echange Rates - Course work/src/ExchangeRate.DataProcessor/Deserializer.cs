@@ -14,7 +14,7 @@ using System.Xml.Serialization;
 
 namespace ExchangeRate.DataProcessor
 {
-    public class Deserializer : IMapFrom<Currency>
+    public class Deserializer
     {
         private readonly IServiceScopeFactory scopeFactory;
 
@@ -28,7 +28,7 @@ namespace ExchangeRate.DataProcessor
             var serializer = new XmlSerializer(typeof(CurrnecyDto[]), new XmlRootAttribute("ROWSET"));
 
             var deserializer = (CurrnecyDto[])serializer.Deserialize(new StringReader(xmlString));
-                     
+
             foreach (var currnecyDto in deserializer)
             {
                 if (!IsValid(currnecyDto))
@@ -54,7 +54,6 @@ namespace ExchangeRate.DataProcessor
                     await dbContext.AddAsync(currency);
                     await dbContext.SaveChangesAsync();
                 }
-                
             }
         }
 
