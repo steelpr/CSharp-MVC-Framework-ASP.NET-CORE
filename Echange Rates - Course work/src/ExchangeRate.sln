@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRate.Data.Models", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRate.Services", "ExchangeRate.Services\ExchangeRate.Services.csproj", "{3E3BC3AB-C072-4BD0-8BD5-E18365BEBC2B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox", "Test\Sandbox\Sandbox.csproj", "{0951B7C4-77B1-45CB-8675-C9961DCC4DE4}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRate.Data.Common", "ExchangeRate.Data.Common\ExchangeRate.Data.Common.csproj", "{FA96FA8F-4EC8-4D96-B0CF-43148166191C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRate.DataProcessor", "ExchangeRate.DataProcessor\ExchangeRate.DataProcessor.csproj", "{0E46FB62-CB37-4DE7-B150-9A46EBCB96E4}"
@@ -41,10 +39,6 @@ Global
 		{3E3BC3AB-C072-4BD0-8BD5-E18365BEBC2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E3BC3AB-C072-4BD0-8BD5-E18365BEBC2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E3BC3AB-C072-4BD0-8BD5-E18365BEBC2B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0951B7C4-77B1-45CB-8675-C9961DCC4DE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0951B7C4-77B1-45CB-8675-C9961DCC4DE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0951B7C4-77B1-45CB-8675-C9961DCC4DE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0951B7C4-77B1-45CB-8675-C9961DCC4DE4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FA96FA8F-4EC8-4D96-B0CF-43148166191C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FA96FA8F-4EC8-4D96-B0CF-43148166191C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA96FA8F-4EC8-4D96-B0CF-43148166191C}.Release|Any CPU.ActiveCfg = Release|Any CPU

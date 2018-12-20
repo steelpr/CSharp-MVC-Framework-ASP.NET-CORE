@@ -55,6 +55,7 @@ namespace ExchangeRate.Web.Areas.Identity.Pages.Account
             public string ConfirmPassword { get; set; }
         }
 
+
         public void OnGet(string returnUrl = null)
         {
             ReturnUrl = returnUrl;

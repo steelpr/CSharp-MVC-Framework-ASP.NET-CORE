@@ -3,7 +3,7 @@ for details on configuring this project to bundle and minify static web assets. 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    }
+}
 
 .jumbotron-background {
     background-image: url(../images/cr.jpg);
@@ -13,9 +13,8 @@ body {
     background-size: cover;
 }
 
-.h1
-{
-    text-align:center;
+.h1 {
+    text-align: center;
 }
 
 /* Wrapping element */
