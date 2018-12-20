@@ -1,11 +1,8 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "_HomePartial";
 }
 
-@if (!this.User.Identity.IsAuthenticated)
-{
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top navbar-default">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -27,7 +24,7 @@
             </div>
         </div>
     </nav>
-}
+@*}
 else if (this.User.Identity.IsAuthenticated)
 {
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -96,6 +93,6 @@ else if (this.User.Identity.IsAuthenticated && this.User.IsInRole("Admin"))
                 <partial name="_LoginPartial" />
             </div>
         </div>
-    </nav>
-}
+    </nav>*@
+@*}*@
 

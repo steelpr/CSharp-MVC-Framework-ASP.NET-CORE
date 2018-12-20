@@ -5,21 +5,22 @@ using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using System.Net;
 using Microsoft.Extensions.DependencyInjection;
+using ExchangeRate.DataProcessor.Services.Contracts;
 
 namespace ExchangeRate.DataProcessor
 {
     public class TimedHostedService : IHostedService, IDisposable
     {
+        private readonly IExportDataService dataProcessorService;
         private readonly ILogger logger;
-        private readonly Deserializer deserializer;
-        private Timer timer;
-        private const int startIndex = 30;
-        private const int endIndex = 502;
 
-        public TimedHostedService(ILogger<TimedHostedService> logger, Deserializer deserializer)
+        private Timer timer;
+
+
+        public TimedHostedService(ILogger<TimedHostedService> logger, IExportDataService dataProcessorService)
         {
             this.logger = logger;
-            this.deserializer = deserializer;
+            this.dataProcessorService = dataProcessorService;
         }
 
         public Task StartAsync(CancellationToken cancellationToken)
@@ -36,22 +37,11 @@ namespace ExchangeRate.DataProcessor
         {
             logger.LogInformation("Timed Background Service is working.");
 
-            WebClient wc = new WebClient();
+            dataProcessorService.ExportCurrency();
 
-            string xml = wc.DownloadString("http://www.bnb.bg/Statistics/StExternalSector/StExchangeRates/StERForeignCurrencies/index.htm?download=xml&search=&lang=EN");
-            
-            string xmlString = xml.Remove(startIndex, endIndex);
-                    
-            try
-            {
-                deserializer.ImportCurreny(xmlString);
-
-                logger.LogInformation("The deserialization was Ok");
-            }
-            catch (Exception)
-            {
-                logger.LogError("deserialization stopped");
-            }
+            dataProcessorService.ExportHardware();
+            dataProcessorService.ExportGame();
+            dataProcessorService.ExportIt();
         }
 
         public Task StopAsync(CancellationToken cancellationToken)

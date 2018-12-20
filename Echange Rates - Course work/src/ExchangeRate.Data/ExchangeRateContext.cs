@@ -1,5 +1,4 @@
-﻿using ExchangeRate.Data.EntityConfiguration;
-using ExchangeRate.Data.Models;
+﻿using ExchangeRate.Data.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,10 +15,10 @@ namespace ExchangeRate.Data
 
         public DbSet<Currency> Currencies { get; set; }
 
+        public DbSet<Category> Categories { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.ApplyConfiguration(new UserArticleEntityConfiguration());
-
             base.OnModelCreating(builder);
         }
     }

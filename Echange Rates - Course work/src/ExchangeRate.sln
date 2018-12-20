@@ -11,13 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRate.Data.Models", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRate.Services", "ExchangeRate.Services\ExchangeRate.Services.csproj", "{3E3BC3AB-C072-4BD0-8BD5-E18365BEBC2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Test\Sandbox\Sandbox.csproj", "{0951B7C4-77B1-45CB-8675-C9961DCC4DE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox", "Test\Sandbox\Sandbox.csproj", "{0951B7C4-77B1-45CB-8675-C9961DCC4DE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRate.Data.Common", "ExchangeRate.Data.Common\ExchangeRate.Data.Common.csproj", "{FA96FA8F-4EC8-4D96-B0CF-43148166191C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRate.Data.Common", "ExchangeRate.Data.Common\ExchangeRate.Data.Common.csproj", "{FA96FA8F-4EC8-4D96-B0CF-43148166191C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRate.DataProcessor", "ExchangeRate.DataProcessor\ExchangeRate.DataProcessor.csproj", "{0E46FB62-CB37-4DE7-B150-9A46EBCB96E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRate.DataProcessor", "ExchangeRate.DataProcessor\ExchangeRate.DataProcessor.csproj", "{0E46FB62-CB37-4DE7-B150-9A46EBCB96E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRate.Services.Mapping", "ExchangeRate.Services.Mapping\ExchangeRate.Services.Mapping.csproj", "{2A989F2F-1EC8-4CCB-9988-71F15A4D326E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRate.Services.Mapping", "ExchangeRate.Services.Mapping\ExchangeRate.Services.Mapping.csproj", "{2A989F2F-1EC8-4CCB-9988-71F15A4D326E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

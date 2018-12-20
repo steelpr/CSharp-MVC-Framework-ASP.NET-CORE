@@ -9,9 +9,9 @@ using ExchangeRate.Data;
 using ExchangeRate.Data.Models;
 using ExchangeRate.Data.Common;
 using ExchangeRate.DataProcessor;
-using ExchangeRate.Services.Contracts;
-using ExchangeRate.Services;
 using ExchangeRate.Services.Mapping;
+using ExchangeRate.DataProcessor.Services.Contracts;
+using ExchangeRate.DataProcessor.Services;
 
 namespace ExchangeRate.Web
 {
@@ -51,13 +51,14 @@ namespace ExchangeRate.Web
                 option.Password.RequireNonAlphanumeric = false;
             })
                 .AddEntityFrameworkStores<ExchangeRateContext>();
-            
+
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddScoped(typeof(IRepository<>), typeof(DbRepository<>));
-            services.AddScoped<IDataProcessorService, DataProcessorService>();
+
             services.AddSingleton<Deserializer>();
+            services.AddSingleton<IExportDataService, ExportDataService>();
 
             services.AddHostedService<TimedHostedService>();
         }

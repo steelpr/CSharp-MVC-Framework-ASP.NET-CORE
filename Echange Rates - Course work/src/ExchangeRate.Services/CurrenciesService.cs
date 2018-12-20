@@ -10,7 +10,6 @@ namespace ExchangeRate.Services
 {
     public class CurrenciesService : ICurrenciesService
     {
-
         private readonly IRepository<Currency> currency;
 
         public CurrenciesService(IRepository<Currency> currency)

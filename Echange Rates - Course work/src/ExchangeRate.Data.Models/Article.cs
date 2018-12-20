@@ -12,15 +12,19 @@ namespace ExchangeRate.Data.Models
         [StringLength(100, MinimumLength = 10)]
         public string Title { get; set; }
 
+        [Url]
+        public string Link { get; set; }
+
         [Required]
         public string Decsription { get; set; }
 
         [Required]
         public DateTime DateOfPublish { get; set; } = DateTime.UtcNow;
+        
+        public string Author { get; set; } = "Admin";
 
-        public string UserId { get; set; }
+        public int CategoryId { get; set; }
 
-        [Required]
-        public virtual ExchangeRateUser User { get; set; }
+        public virtual Category Category { get; set; }
     }
 }
